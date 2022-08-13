@@ -28,10 +28,10 @@ class PageController extends Controller
     public function home(Request $request)
     {
         $products = Product::all();
-        $searches =  $products->where('title', 'LIKE', '%' .$request. '%')
-             ->orderBy('created_at', 'desc');
+        // $searches =  $products->where('title', 'LIKE', '%' .$request. '%')
+        //      ->orderBy('created_at', 'desc');
 
-        return $searches;
+        // return $searches;
         return view('frontend.pages.home', compact('products'));
     }
     public function account()
