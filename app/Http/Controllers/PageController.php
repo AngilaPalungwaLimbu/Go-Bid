@@ -40,13 +40,14 @@ class PageController extends Controller
     public function product($id)
     {
         $product = Product::find($id);
+        $currentDate = Carbon::now()->addHours(5)->addMinute(45);
         $bids = Bid::select("*")
             ->where('product_id', $product->id)
             ->orderBy('price', 'desc')->get();
-        $currentDate = Carbon::now()->addHours(5)->addMinute(45);
         $winner = Bid::select("*")
             ->where('product_id', $product->id)
             ->orderBy('price', 'desc')->first();
+            // return $product->endingTime;
         return view('frontend.pages.productDetail', compact('product', 'bids', 'currentDate','winner'));
     }
 

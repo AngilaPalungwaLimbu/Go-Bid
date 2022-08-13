@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bid;
 use App\Models\Category;
 use App\Models\Product;
 use Carbon\Carbon;
@@ -10,6 +11,11 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
+    public function index()
+    {
+        $products = Product::all();
+        return view('admin.product.index', compact('products'));
+    }
     public function create()
     {
         $categories=Category::all();
@@ -17,11 +23,21 @@ class ProductController extends Controller
       return view('frontend.pages.productCreate',compact('categories','currentDate',));
     }
 
-    public function show(){
 
-        $product=Product::all();
-
+    public function product($id)
+    {
+        $product = Product::find($id);
+        $currentDate = Carbon::now()->addHours(5)->addMinute(45);
+        $bids = Bid::select("*")
+            ->where('product_id', $product->id)
+            ->orderBy('price', 'desc')->get();
+        $winner = Bid::select("*")
+            ->where('product_id', $product->id)
+            ->orderBy('price', 'desc')->first();
+            // return $product->endingTime;
+        return view('admin.product.productshow', compact('product', 'bids', 'currentDate','winner'));
     }
+
 
     public function store(Request $request)
     {
@@ -40,5 +56,13 @@ class ProductController extends Controller
         }
         $product->save();
         return redirect('/');
+    }
+    public function delete($id)
+    {
+        $product=Product::find($id);
+        // $product->categories()->detach();
+        // $product->seller()->detach();
+        $product->delete();
+        return redirect('/product');
     }
 }

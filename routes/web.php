@@ -56,10 +56,10 @@ require __DIR__ . '/auth.php';
 Route::get('/seller/create', [SellerController::class, 'create']);
 Route::get('/account', [PageController::class, 'account']);
 Route::post('/seller', [SellerController::class, 'store']);
-Route::get('/home',[PageController::class,'home']);
-Route::get('/product_detail/{id}',[PageController::class,'product']);
+Route::get('/home', [PageController::class, 'home']);
+Route::get('/product_detail/{id}', [PageController::class, 'product']);
 Route::post('/bid', [BidController::class, 'createBid']);
-Route::get('/search',[PageController::class,'search']);
+Route::get('/search', [PageController::class, 'search']);
 
 
 
@@ -79,5 +79,9 @@ Route::middleware(['isAdmin'])->group(function () {
     Route::get('/seller', [SellerController::class, 'index']);
     Route::get('/seller/{id}', [SellerController::class, 'show']);
     Route::put('/seller/{id}', [SellerController::class, 'updaterole']);
+    Route::delete('/seller/{id}', [SellerController::class, 'delete']);
     Route::resource('category', CategoryController::class);
+    Route::get('/product', [ProductController::class, 'index']);
+    Route::get('/product-detail/{id}', [ProductController::class, 'product']);
+    Route::delete('/productdelete/{id}', [ProductController::class, 'delete']);
 });

@@ -11,7 +11,7 @@
                         <a href="/product_detail/{{ $product->id }}" class="text-dark text-decoration-none">
                             <div class="card border-1 pborder rounded-0 ">
                                 <div class="card-body ">
-                                    <img src="{{ asset($product->image) }} " class="img-fluid h-auto" alt="">
+                                    <img src="{{ asset($product->image) }} " class="img-fluid img-height" alt="">
                                 </div>
                                 <div class="p-3">
                                     <p class="fs-5">{{ $product->name }}</p>

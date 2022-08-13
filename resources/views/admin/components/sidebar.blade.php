@@ -15,7 +15,7 @@
                             class="hide-menu text-dark">Category</span></a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect  sidebar-link" href="widgets.html"
+                    <a class="sidebar-link waves-effect  sidebar-link" href="/product"
                         aria-expanded="false"><i class="mdi mdi-chart-bubble text-dark"></i><span
                             class="hide-menu text-dark">Product</span></a>
                 </li>

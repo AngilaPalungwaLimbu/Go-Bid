@@ -48,4 +48,11 @@ class SellerController extends Controller
        $seller->user->update();
        return redirect()->back();
     }
+    public function delete($id)
+    {
+        $seller=Seller::find($id);
+        // $seller->user()->detach();
+        $seller->delete();
+        return redirect('/seller');
+    }
 }

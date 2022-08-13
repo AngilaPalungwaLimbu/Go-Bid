@@ -17,6 +17,7 @@
     <link href=" {{ asset('dash/assets/libs/flot/css/float-chart.css') }}" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="{{ asset('dash/dist/css/style.min.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 
 </head>
 
@@ -161,6 +162,35 @@
     <script src="{{ asset('dash/assets/libs/flot/jquery.flot.crosshair.js') }}"></script>
     <script src="{{ asset('dash/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js') }}"></script>
     <script src="{{ asset('dash/dist/js/pages/chart/chart-page-init.js') }}"></script>
+    <script src="{{asset('js/jquery.countdown.min.js')}}"></script>
+    <script>
+       ;(function($) {
+
+        var MERCADO_JS = {
+          init: function(){
+             this.mercado_countdown();
+
+          },
+        mercado_countdown: function() {
+             if($(".mercado-countdown").length > 0){
+                    $(".mercado-countdown").each( function(index, el){
+                      var _this = $(this),
+                      _expire = _this.data('expire');
+                   _this.countdown(_expire, function(event) {
+                            $(this).html( event.strftime('<span><b>%D</b> Days</span> <span><b>%-H</b> Hrs</span> <span><b>%M</b> Mins</span> <span><b>%S</b> Secs</span>'));
+                        });
+                    });
+             }
+          },
+
+       }
+
+          window.onload = function () {
+             MERCADO_JS.init();
+          }
+
+          })(window.Zepto || window.jQuery, window, document);
+    </script>
 </body>
 
 </html>
