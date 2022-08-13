@@ -5,7 +5,9 @@
 .ptext {
     color: #0f9015;
 }
-
+.card{
+    height:75%!important;
+}
 
 .card:hover {
 

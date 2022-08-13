@@ -59,6 +59,7 @@ Route::post('/seller', [SellerController::class, 'store']);
 Route::get('/home',[PageController::class,'home']);
 Route::get('/product_detail/{id}',[PageController::class,'product']);
 Route::post('/bid', [BidController::class, 'createBid']);
+Route::get('/search',[PageController::class,'search']);
 
 
 
