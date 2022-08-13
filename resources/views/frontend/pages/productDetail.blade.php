@@ -15,8 +15,7 @@
                         {{-- <a href=""><p class="fs-4 ">Category: {{ $product->ca}}</p></a> --}}
                         <p class="fs-5 ">Owner: {{ $product->seller->user->name }}</p>
                         <p class="fs-5 ">Starting Price: NRs.{{ $product->startingPrice }}</p>
-                        <p class="fs-5 ">End Date: <span class="wrap-countdown mercado-countdown"
-                                data-expire="{{ Carbon\Carbon::parse($product->endingTime)->format('Y/m/d h:i:s') }}"></span>
+                        <p class="fs-5 ">End Date: <span class="wrap-countdown mercado-countdown" data-expire="{{ Carbon\Carbon::parse($product->endingTime)->format('Y/m/d h:i:s') }}"></span>
                         </p>
 
                         <input type="text" name="product_id" value="{{ $product->id }} " hidden>

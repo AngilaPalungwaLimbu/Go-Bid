@@ -25,13 +25,9 @@ class PageController extends Controller
     }
 
 
-    public function home(Request $request)
+    public function home()
     {
         $products = Product::all();
-        // $searches =  $products->where('title', 'LIKE', '%' .$request. '%')
-        //      ->orderBy('created_at', 'desc');
-
-        // return $searches;
         return view('frontend.pages.home', compact('products'));
     }
     public function account()
@@ -53,4 +49,12 @@ class PageController extends Controller
             ->orderBy('price', 'desc')->first();
         return view('frontend.pages.productDetail', compact('product', 'bids', 'currentDate','winner'));
     }
+
+    public function search()
+    {
+        $search=$_GET['query'];
+        $products = Product::where('name','like','%'.$search.'%')->get();
+        return view('frontend.pages.search', compact('products'));
+    }
+
 }

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->longText('description')->nullable();
             $table->string('image');
             $table->foreignId('seller_id')->constrained();
-            $table->timestamp('endingTime');
+            $table->dateTime('endingTime');
             $table->timestamps();
         });
     }
