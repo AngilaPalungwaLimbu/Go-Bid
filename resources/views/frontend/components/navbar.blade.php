@@ -10,9 +10,11 @@
         <div class="col-md-4 my-3   offset-2 ">
             <form action="" class=" ">
                 <div class="input-group">
-                    <input type="text" class="form-control form-control-md" placeholder="Search Here">
+                    <form action="/home" class="inline">
+                        <input type="text" class="form-control form-control-md" name="search" placeholder="Search Here">
                     <button type="submit" class="input-group-text "><i
                             class="fa-solid fa-magnifying-glass text-success"></i></button>
+                    </form>
                 </div>
             </form>
         </div>

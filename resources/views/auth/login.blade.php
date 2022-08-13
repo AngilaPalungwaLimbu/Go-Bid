@@ -1,10 +1,9 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                    <img src="{{ asset('img/logo.png') }}" width="70%" class ="mx-auto mt-auto"
-                        alt="">
-            </a>
+
+            <img src="{{ asset('img/logo.png') }}" width="50%" class="mx-auto mt-auto" alt="">
+
         </x-slot>
 
         <!-- Session Status -->
@@ -62,7 +61,7 @@
             <div class="text-sm flex justify-center mt-6">
                 Don't have an account?
                 <a href="{{ route('register') }}"
-                class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register now</a>
+                    class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register now</a>
             </div>
         @endif
     </x-auth-card>
