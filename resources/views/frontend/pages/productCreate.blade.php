@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-group">
                         <label for="endingTime">Ending Date<span class="text-danger">*</span></label>
-                        <input type="datetime-local" min ="{{ $currentDate }}" name="endingTime" id="endingTime" class="form-control">
+                        <input type="datetime-local" min ="{{ $currentDate }}" name="endingTime"  class="form-control">
                     </div>
 
 

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Bid;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
 class BidController extends Controller
 {
     public function createBid(Request $request)
@@ -15,7 +14,8 @@ class BidController extends Controller
         $bid->product_id = $request->product_id;
         $bid->user_id = Auth::user()->id;
         $bid->save();
-        return redirect('/')->with('success', 'Your bid is accepted.');
+        toast('Your have bidded succesfully!','success');
+        return redirect()->back();
 
     }
 }

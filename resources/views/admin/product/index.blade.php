@@ -17,7 +17,6 @@
                             </div>
                             <div class="card-footer p-3">
                                 <p class="fs-5">{{ $product->name }}</p>
-                                <span class="ptext fs-4">{{ $product->startingPrice }}</span>
 
                             </div>
                         </div>

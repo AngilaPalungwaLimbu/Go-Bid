@@ -23,19 +23,23 @@
 
 <body>
 
+    @include('sweetalert::alert')
+
     <!-- Preloader - style you can find in spinners.css -->
     <div class="preloader">
         <div class="lds-ripple">
+            @include('sweetalert::alert')
+
             <div class="lds-pos"></div>
             <div class="lds-pos"></div>
         </div>
     </div>
-    <!-- ============================================================== -->
+
     <!-- Main wrapper - style you can find in pages.scss -->
-    <!-- ============================================================== -->
+
     <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
-        <!-- ============================================================== -->
+        
         <!-- Topbar header - Navbar -->
         @include('admin.components.navbar')
 
@@ -151,17 +155,8 @@
     <script src="{{ asset('dash/dist/js/sidebarmenu.js') }}"></script>
     <!--Custom JavaScript -->
     <script src="{{ asset('dash/dist/js/custom.min.js') }}"></script>
-    <!--This page JavaScript -->
-    <!-- <script src="dash/dist/js/pages/dashboards/dashboard1.js')}}"></script> -->
-    <!-- Charts js Files -->
-    <script src="{{ asset('dash/assets/libs/flot/excanvas.js') }}"></script>
-    <script src="{{ asset('dash/assets/libs/flot/jquery.flot.js') }}"></script>
-    <script src="{{ asset('dash/assets/libs/flot/jquery.flot.pie.js') }}"></script>
-    <script src="{{ asset('dash/assets/libs/flot/jquery.flot.time.js') }}"></script>
-    <script src="{{ asset('dash/assets/libs/flot/jquery.flot.stack.js') }}"></script>
-    <script src="{{ asset('dash/assets/libs/flot/jquery.flot.crosshair.js') }}"></script>
+
     <script src="{{ asset('dash/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js') }}"></script>
-    <script src="{{ asset('dash/dist/js/pages/chart/chart-page-init.js') }}"></script>
     <script src="{{asset('js/jquery.countdown.min.js')}}"></script>
     <script>
        ;(function($) {

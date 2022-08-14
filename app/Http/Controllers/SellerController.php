@@ -8,9 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 class SellerController extends Controller
 {
-
-
-
     public function index(){
         $sellers= Seller::get();
         return view('admin.seller.index',compact('sellers'));
@@ -33,7 +30,7 @@ class SellerController extends Controller
             $seller->image="image/$newName";
         }
         $seller->save();
-        // toast('Your Post is saved!','success');
+        toast('Your have bidded succesfully!','success');
         return redirect('/');
     }
     public function show($id)

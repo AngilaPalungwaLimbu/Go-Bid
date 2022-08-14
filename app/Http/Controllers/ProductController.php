@@ -54,7 +54,7 @@ class ProductController extends Controller
             $file->move('image',$newName);
             $product->image="image/$newName";
         }
-        $product->save();
+        $product->save(); 
         return redirect('/');
     }
     public function delete($id)
